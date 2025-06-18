@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1: Database Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="grid.html">grid</a></li>
+        <li><a href="chap1.html">Chapter 1</a></li>
+        <li><a href="chap2.html">Chapter 2</a></li>
+        <li><a href="chap3.html">Chapter 3</a></li>
+        <li><a href="chap4.html">Chapter 4</a></li>
+        <li><a href="chap5.html">Chapter 5</a></li>
+        <li><a href="chap6.html">Chapter 6</a></li>
+        <li><a href="chap7.html">Chapter 7</a></li>
+        <li><a href="chap8.html">Chapter 8</a></li>
+        <li><a href="qna.html">QnA</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h1>Data and Information</h1>
+      <p>Data refers to raw facts and figures that are unprocessed and have no inherent meaning. Information, on the other hand, is processed data that is meaningful and useful. It is data that has been organized or structured in a way that is useful for decision-making.</p>
+      
+      <h2>Features of Information</h2>
+      <p>The key features of information include accuracy, relevance, completeness, and timeliness. It should be presented in a manner that is understandable and usable for the recipient.</p>
+      
+      <h2>Database and its Purpose</h2>
+      <p>A database is a systematic collection of data that can be easily accessed, managed, and updated. The purpose of a database is to store and organize data efficiently, allowing users to retrieve and manipulate data as needed.</p>
+      
+      <h2>Terminologies in Database</h2>
+      <ul>
+        <li><strong>Table:</strong> A collection of data organized in rows and columns.</li>
+        <li><strong>Field:</strong> A single piece of data or attribute within a table (i.e., a column).</li>
+        <li><strong>Record:</strong> A complete set of related fields, typically represented by a row in a table.</li>
+        <li><strong>Tuple:</strong> A single row in a relational database table, representing a record.</li>
+        <li><strong>Object:</strong> A collection of related data and methods that operate on that data, often used in object-oriented databases.</li>
+        <li><strong>Keys:</strong> Attributes or sets of attributes that uniquely identify a record in a table.</li>
+      </ul>
+      
+      <h2>Data Dictionary</h2>
+      <p>A data dictionary is a centralized repository that contains detailed information about data elements within a database. It describes the structure, relationships, and constraints on the data.</p>
+      
+      <h2>Database Management System (DBMS)</h2>
+      <h3>Introduction</h3>
+      <p>A Database Management System (DBMS) is software that provides an interface to interact with the database. It manages data, allows for queries, and ensures data integrity.</p>
+      
+      <h3>Objectives</h3>
+      <p>The main objectives of a DBMS are data integrity, security, consistency, and efficiency in managing large volumes of data.</p>
+      
+      <h3>Advantages</h3>
+      <p>Advantages of DBMS include reduced data redundancy, improved data security, easier data retrieval, and improved data consistency.</p>
+      
+      <h3>Disadvantages</h3>
+      <p>Disadvantages include cost of implementation, complexity, and the need for specialized knowledge.</p>
+      
+      <h2>Types of Database Model</h2>
+      <ul>
+        <li><strong>Hierarchical Model:</strong> Data is organized in a tree-like structure where each record has a single parent.</li>
+        <li><strong>Network Model:</strong> Data is organized in a graph structure, allowing multiple relationships between records.</li>
+        <li><strong>Relational Model:</strong> Data is stored in tables with relationships between them.</li>
+        <li><strong>Entity-Relationship Model:</strong> Uses entities and relationships to represent data.</li>
+      </ul>
+      
+      <h2>Integrity Constraints and Types</h2>
+      <ul>
+        <li><strong>Domain:</strong> Specifies the valid values for an attribute.</li>
+        <li><strong>Entity:</strong> Ensures that each entity (record) is unique.</li>
+        <li><strong>Referential:</strong> Ensures that foreign keys in a table refer to valid primary keys in another table.</li>
+      </ul>
+      
+      <h2>Normalization</h2>
+      <h3>Introduction</h3>
+      <p>Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity.</p>
+      
+      <h3>Normal Forms</h3>
+      <ul>
+        <li><strong>1NF:</strong> Ensures that each column contains atomic (indivisible) values.</li>
+        <li><strong>2NF:</strong> Ensures that the database is in 1NF and that all non-key attributes are fully dependent on the primary key.</li>
+        <li><strong>3NF:</strong> Ensures that the database is in 2NF and that there are no transitive dependencies between attributes.</li>
+      </ul>
+      
+      <h3>Advantages</h3>
+      <p>Normalization helps in reducing redundancy and ensures data consistency. It also optimizes database performance.</p>
+      
+      <h3>Disadvantages</h3>
+      <p>Normalization can lead to more complex queries and sometimes performance issues due to the need for multiple joins.</p>
+      
+      <h2>Centralized and Distributed Database</h2>
+      <h3>Introduction</h3>
+      <p>A centralized database stores all data at a single location, while a distributed database stores data across multiple sites or servers.</p>
+      
+      <h3>Advantages</h3>
+      <p>Centralized databases offer easier management, while distributed databases provide improved fault tolerance and availability.</p>
+      
+      <h3>Disadvantages</h3>
+      <p>Centralized databases may be a single point of failure, whereas distributed databases can be more complex to maintain and manage.</p>
+      
+      <h3>Comparison</h3>
+      <p>Centralized databases are simpler to manage but more prone to failure, while distributed databases provide better performance but are more complex to maintain.</p>
+      
+      <h2>Database Security</h2>
+      <h3>Introduction</h3>
+      <p>Database security involves protecting the database from unauthorized access, attacks, and other security threats.</p>
+      
+      <h3>Challenges</h3>
+      <p>Challenges include data breaches, insider threats, and maintaining data confidentiality and integrity.</p>
+      
+      <h3>Security Measures</h3>
+      <p>Measures include encryption, access control, regular audits, and implementing strong authentication methods.</p>
+      
+      <h2>Roles of DBA</h2>
+      <p>The Database Administrator (DBA) is responsible for managing and maintaining the database, ensuring data integrity, and enforcing security policies.</p>
+      
+      <h2>Practical Topics</h2>
+      <h3>DDL and DML Languages</h3>
+      <p>Data Definition Language (DDL) is used for defining the database schema, while Data Manipulation Language (DML) is used for querying and modifying data.</p>
+      
+      <h3>SQL Data Types</h3>
+      <ul>
+        <li><strong>CHAR:</strong> A fixed-length character string.</li>
+        <li><strong>VARCHAR:</strong> A variable-length character string.</li>
+        <li><strong>BINARY:</strong> A fixed-length binary data type.</li>
+        <li><strong>VARBINARY:</strong> A variable-length binary data type.</li>
+        <li><strong>TINYBLOB:</strong> A small binary data type.</li>
+        <li><strong>TINYTEXT:</strong> A small text data type.</li>
+        <li><strong>TEXT:</strong> A text data type.</li>
+        <li><strong>LONGTEXT:</strong> A long text data type.</li>
+        <li><strong>ENUM:</strong> A list of predefined values.</li>
+        <li><strong>BIT:</strong> A binary data type used to store boolean values.</li>
+        <li><strong>TINYINT:</strong> A small integer data type.</li>
+        <li><strong>BOOLEAN:</strong> A boolean data type, often represented as 1 (true) or 0 (false).</li>
+        <li><strong>INTEGER:</strong> A standard integer data type.</li>
+        <li><strong>FLOAT:</strong> A floating-point number data type used for precise calculations.</li>
+        <li><strong>DOUBLE:</strong> A double-precision floating-point number data type.</li>
+        <li><strong>DECIMAL:</strong> A fixed-point number used for exact numeric values, often used for monetary values.</li>
+        <li><strong>DATE:</strong> A date value, formatted as YYYY-MM-DD.</li>
+        <li><strong>DATETIME:</strong> A date and time value, formatted as YYYY-MM-DD HH:MM:SS.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Database Management System Tutorial</p>
+  </footer>
+</body>
+</html>
+
+
