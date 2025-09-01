@@ -30,54 +30,97 @@
         <h1>Unit 4: C Programming</h1>
 
         <!-- ================= FUNCTIONS ================= -->
-        <h2>Functions</h2>
-        <h3>Introduction and Syntax</h3>
-        <p>A function is a block of code that performs a specific task. Syntax:</p>
+        <h2>Functions in C</h2>
+        <h3>Introduction</h3>
+        <p>
+          A function in C is a block of code that performs a specific task. It
+          allows us to divide a large program into smaller, manageable modules.
+        </p>
+
+        <h3>Syntax</h3>
         <pre>
 returnType functionName(parameters) {
-    // statements
+    // function body
+    return value;
 }
         </pre>
 
         <h3>Purpose and Advantages</h3>
         <ul>
-          <li>Code reusability</li>
-          <li>Modular programming</li>
-          <li>Easy debugging and maintenance</li>
+          <li>Promotes modularity and structured programming.</li>
+          <li>Increases code reusability.</li>
+          <li>Makes debugging and testing easier.</li>
+          <li>Improves readability of code.</li>
         </ul>
 
         <h3>Components of a Function</h3>
         <ul>
-          <li>Function Prototype</li>
-          <li>Function Definition</li>
-          <li>Function Call</li>
-          <li>Return Statement</li>
+          <li>
+            <strong>Prototype:</strong> Declaration of function before its use.
+          </li>
+          <li>
+            <strong>Definition:</strong> Actual body of the function containing
+            statements.
+          </li>
+          <li><strong>Call:</strong> Invoking the function in main or another.</li>
+          <li>
+            <strong>Return Statement:</strong> Used to send result back to the
+            caller.
+          </li>
         </ul>
 
         <h3>Types of Functions</h3>
         <ul>
-          <li><strong>Library Functions:</strong> Built-in, e.g., printf(), scanf().</li>
-          <li><strong>User Defined Functions:</strong> Created by programmer.</li>
+          <li>
+            <strong>Library Functions:</strong> Predefined in C library (e.g.,
+            printf(), scanf(), sqrt()).
+          </li>
+          <li>
+            <strong>User Defined Functions:</strong> Created by programmers to
+            perform specific tasks.
+          </li>
         </ul>
 
         <h3>Passing Arguments</h3>
         <ul>
-          <li><strong>Call by Value:</strong> Copies value into function parameter.</li>
-          <li><strong>Call by Reference:</strong> Passes address, changes affect original variable.</li>
+          <li>
+            <strong>Call by Value:</strong> Copies actual parameter values to
+            formal parameters. Changes don’t affect original values.
+          </li>
+          <li>
+            <strong>Call by Reference:</strong> Passes address of variables.
+            Changes affect original values.
+          </li>
         </ul>
 
-        <h3>Variable and its Scope</h3>
+        <h3>Variable Scope</h3>
         <ul>
-          <li><strong>Local:</strong> Declared inside function, accessible only within.</li>
-          <li><strong>Global:</strong> Declared outside all functions, accessible everywhere.</li>
+          <li>
+            <strong>Local:</strong> Declared inside a function. Accessible only
+            within it.
+          </li>
+          <li>
+            <strong>Global:</strong> Declared outside all functions. Accessible
+            from any function.
+          </li>
         </ul>
 
         <h3>Storage Classes</h3>
         <ul>
-          <li><strong>Automatic:</strong> Default, local scope.</li>
-          <li><strong>External:</strong> Declared with <code>extern</code>, global access.</li>
-          <li><strong>Static:</strong> Retains value between function calls.</li>
-          <li><strong>Register:</strong> Stored in CPU register for fast access.</li>
+          <li>
+            <strong>Automatic (auto):</strong> Default, local variables with
+            block scope.
+          </li>
+          <li>
+            <strong>External (extern):</strong> Declared globally, accessible
+            across files.
+          </li>
+          <li>
+            <strong>Static:</strong> Retains value between function calls.
+          </li>
+          <li>
+            <strong>Register:</strong> Stored in CPU register for faster access.
+          </li>
         </ul>
 
         <h3>Function with Array (Example)</h3>
@@ -94,8 +137,11 @@ int main() {
 }
         </pre>
 
-        <h3>Recursive Function</h3>
-        <p>A function that calls itself.</p>
+        <h3>Recursive Functions</h3>
+        <p>
+          A recursive function is one that calls itself to solve a smaller
+          subproblem.
+        </p>
         <pre>
 #include &lt;stdio.h&gt;
 int factorial(int n) {
@@ -107,20 +153,28 @@ int main() {
     return 0;
 }
         </pre>
-        <p><strong>Advantages:</strong> Reduces code complexity.</p>
-        <p><strong>Disadvantages:</strong> More memory and time consumption.</p>
+        <p><strong>Advantages:</strong> Simplifies complex problems like factorial, Fibonacci, etc.</p>
+        <p><strong>Disadvantages:</strong> High memory and execution time due to stack usage.</p>
 
         <!-- ================= STRUCTURE & UNION ================= -->
         <h2>Structure and Union</h2>
         <h3>Structure</h3>
-        <p>A user-defined data type to group different variables.</p>
+        <p>
+          A structure is a user-defined data type that allows grouping of
+          variables of different types under a single name.
+        </p>
         <pre>
 struct Student {
     int id;
     char name[20];
 };
         </pre>
-        <p><strong>Structure Size:</strong> Depends on data types and compiler alignment.</p>
+
+        <h3>Structure Size</h3>
+        <p>
+          The size of a structure depends on the data types of its members and
+          compiler alignment (padding).
+        </p>
 
         <h3>Accessing Members (Example)</h3>
         <pre>
@@ -161,7 +215,10 @@ void display(struct Student st) {
         </pre>
 
         <h3>Union</h3>
-        <p>Like structure, but shares memory among members.</p>
+        <p>
+          A union is similar to structure but all members share the same memory
+          location. Only one member can hold a value at a time.
+        </p>
         <pre>
 union Data {
     int i;
@@ -170,30 +227,44 @@ union Data {
 };
         </pre>
 
-        <h3>Comparison Between Structure and Union</h3>
+        <h3>Comparison</h3>
         <ul>
-          <li><strong>Structure:</strong> All members have separate memory.</li>
-          <li><strong>Union:</strong> All members share same memory.</li>
+          <li>
+            <strong>Structure:</strong> Each member has its own memory, size =
+            sum of all members.
+          </li>
+          <li>
+            <strong>Union:</strong> All members share same memory, size =
+            largest member.
+          </li>
         </ul>
 
         <!-- ================= POINTERS ================= -->
         <h2>Pointers</h2>
         <h3>Introduction</h3>
-        <p>Pointers store the address of variables.</p>
+        <p>
+          A pointer is a variable that stores the memory address of another
+          variable.
+        </p>
         <pre>
 int *ptr, x=10;
 ptr = &x;
+printf("%d", *ptr); // prints value of x
         </pre>
 
-        <h3>Pointer and Function</h3>
-        <p>Allows call by reference.</p>
+        <h3>Concept of Value and Address</h3>
+        <p>
+          <code>&amp;</code> gives address, <code>*</code> gives value at that
+          address.
+        </p>
+
+        <h3>Declaration and Initialization</h3>
         <pre>
-void change(int *p) {
-    *p = 20;
-}
+int x=5;
+int *p = &x;
         </pre>
 
-        <h3>Call by Reference Example</h3>
+        <h3>Pointer and Functions (Call by Reference)</h3>
         <pre>
 #include &lt;stdio.h&gt;
 void swap(int *a, int *b) {
@@ -204,7 +275,7 @@ void swap(int *a, int *b) {
 int main() {
     int x=5,y=10;
     swap(&x,&y);
-    printf("%d %d",x,y);
+    printf("%d %d",x,y); // prints 10 5
     return 0;
 }
         </pre>
@@ -216,59 +287,92 @@ int *p = arr;
 printf("%d", *(p+1)); // prints 20
         </pre>
 
-        <p><strong>Advantages:</strong> Dynamic memory, faster access.</p>
-        <p><strong>Disadvantages:</strong> Complexity, prone to errors.</p>
+        <p><strong>Advantages:</strong> Dynamic memory allocation, efficient array handling.</p>
+        <p><strong>Disadvantages:</strong> Pointer errors may cause crashes or memory leaks.</p>
 
         <!-- ================= FILE HANDLING ================= -->
         <h2>File Handling</h2>
-        <h3>Concept and Need</h3>
-        <p>Files store data permanently, unlike variables stored in RAM.</p>
+        <h3>Concept</h3>
+        <p>
+          File handling in C allows permanent storage of data on disk, unlike
+          variables stored temporarily in memory.
+        </p>
+
+        <h3>Need</h3>
+        <ul>
+          <li>Data persistence even after program termination.</li>
+          <li>Efficient input/output operations.</li>
+        </ul>
 
         <h3>Types of Files</h3>
         <ul>
-          <li>Sequential Files</li>
-          <li>Random Files</li>
+          <li><strong>Sequential Files:</strong> Data accessed in order.</li>
+          <li><strong>Random Files:</strong> Data accessed directly using file pointers.</li>
         </ul>
 
         <h3>File Handling Functions</h3>
         <ul>
-          <li><code>fopen(), fclose()</code></li>
-          <li><code>getc(), putc()</code></li>
-          <li><code>fprintf(), fscanf()</code></li>
-          <li><code>getw(), putw()</code></li>
-          <li><code>fgets(), fputs()</code></li>
-          <li><code>fread(), fwrite()</code></li>
-          <li><code>remove(), rename()</code></li>
+          <li><code>fopen(), fclose()</code> → Open and close files.</li>
+          <li><code>getc(), putc()</code> → Read/write single characters.</li>
+          <li><code>fprintf(), fscanf()</code> → Formatted I/O for files.</li>
+          <li><code>getw(), putw()</code> → Read/write integers.</li>
+          <li><code>fgets(), fputs()</code> → Read/write strings.</li>
+          <li><code>fread(), fwrite()</code> → Block input/output for binary files.</li>
+          <li><code>remove(), rename()</code> → Delete/rename files.</li>
         </ul>
 
         <h3>Random Access Functions</h3>
         <ul>
-          <li><code>fseek()</code></li>
-          <li><code>rewind()</code></li>
-          <li><code>ftell()</code></li>
+          <li><code>fseek()</code> → Move file pointer to specific location.</li>
+          <li><code>rewind()</code> → Reset file pointer to beginning.</li>
+          <li><code>ftell()</code> → Get current file pointer position.</li>
         </ul>
 
         <h3>File Opening Modes</h3>
         <ul>
-          <li><code>r</code>, <code>r+</code></li>
-          <li><code>w</code>, <code>w+</code></li>
-          <li><code>a</code>, <code>a+</code></li>
+          <li><code>r</code>, <code>r+</code> → Read/read+write existing file.</li>
+          <li><code>w</code>, <code>w+</code> → Write/create new file (overwrites).</li>
+          <li><code>a</code>, <code>a+</code> → Append data to file.</li>
         </ul>
 
         <h3>Steps to Work with Files</h3>
         <ol>
-          <li>Define File Pointer</li>
-          <li>Open File with Mode</li>
-          <li>Read/Write/Append Operations</li>
-          <li>Close the File</li>
+          <li>Define File Pointer.</li>
+          <li>Open File in required mode.</li>
+          <li>Perform read/write/append operations.</li>
+          <li>Close the file.</li>
         </ol>
 
+        <h3>Reading and Writing Example</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+int main() {
+    FILE *fp;
+    fp = fopen("data.txt", "w");
+    fprintf(fp, "Hello File!");
+    fclose(fp);
+
+    fp = fopen("data.txt", "r");
+    char str[20];
+    fgets(str, 20, fp);
+    printf("%s", str);
+    fclose(fp);
+    return 0;
+}
+        </pre>
+
         <h3>End of File (EOF)</h3>
-        <p>Special marker indicating no more data.</p>
+        <p>
+          A special condition when no more data is available in file. Detected
+          using <code>EOF</code> constant.
+        </p>
 
         <!-- ================= TYPEDEF ================= -->
         <h2>Typedef Keyword</h2>
-        <p>Used to give a new name to existing data types.</p>
+        <p>
+          The <code>typedef</code> keyword is used to provide alternative names
+          (aliases) to existing data types, improving readability.
+        </p>
         <pre>
 typedef unsigned int UINT;
 UINT age = 25;
