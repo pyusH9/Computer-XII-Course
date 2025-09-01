@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 4: C Programming</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="grid.html">Grid</a></li>
+          <li><a href="chap1.html">Chapter 1</a></li>
+          <li><a href="chap2.html">Chapter 2</a></li>
+          <li><a href="chap3.html">Chapter 3</a></li>
+          <li><a href="chap4.html">Chapter 4</a></li>
+          <li><a href="chap5.html">Chapter 5</a></li>
+          <li><a href="chap6.html">Chapter 6</a></li>
+          <li><a href="chap7.html">Chapter 7</a></li>
+          <li><a href="chap8.html">Chapter 8</a></li>
+          <li><a href="qna.html">QnA</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Unit 4: C Programming</h1>
+
+        <!-- ================= FUNCTIONS ================= -->
+        <h2>Functions</h2>
+        <h3>Introduction and Syntax</h3>
+        <p>A function is a block of code that performs a specific task. Syntax:</p>
+        <pre>
+returnType functionName(parameters) {
+    // statements
+}
+        </pre>
+
+        <h3>Purpose and Advantages</h3>
+        <ul>
+          <li>Code reusability</li>
+          <li>Modular programming</li>
+          <li>Easy debugging and maintenance</li>
+        </ul>
+
+        <h3>Components of a Function</h3>
+        <ul>
+          <li>Function Prototype</li>
+          <li>Function Definition</li>
+          <li>Function Call</li>
+          <li>Return Statement</li>
+        </ul>
+
+        <h3>Types of Functions</h3>
+        <ul>
+          <li><strong>Library Functions:</strong> Built-in, e.g., printf(), scanf().</li>
+          <li><strong>User Defined Functions:</strong> Created by programmer.</li>
+        </ul>
+
+        <h3>Passing Arguments</h3>
+        <ul>
+          <li><strong>Call by Value:</strong> Copies value into function parameter.</li>
+          <li><strong>Call by Reference:</strong> Passes address, changes affect original variable.</li>
+        </ul>
+
+        <h3>Variable and its Scope</h3>
+        <ul>
+          <li><strong>Local:</strong> Declared inside function, accessible only within.</li>
+          <li><strong>Global:</strong> Declared outside all functions, accessible everywhere.</li>
+        </ul>
+
+        <h3>Storage Classes</h3>
+        <ul>
+          <li><strong>Automatic:</strong> Default, local scope.</li>
+          <li><strong>External:</strong> Declared with <code>extern</code>, global access.</li>
+          <li><strong>Static:</strong> Retains value between function calls.</li>
+          <li><strong>Register:</strong> Stored in CPU register for fast access.</li>
+        </ul>
+
+        <h3>Function with Array (Example)</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+void display(int arr[], int n) {
+    for(int i=0; i&lt;n; i++)
+        printf("%d ", arr[i]);
+}
+int main() {
+    int nums[3] = {1, 2, 3};
+    display(nums, 3);
+    return 0;
+}
+        </pre>
+
+        <h3>Recursive Function</h3>
+        <p>A function that calls itself.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+int factorial(int n) {
+    if(n==0) return 1;
+    return n * factorial(n-1);
+}
+int main() {
+    printf("Factorial = %d", factorial(5));
+    return 0;
+}
+        </pre>
+        <p><strong>Advantages:</strong> Reduces code complexity.</p>
+        <p><strong>Disadvantages:</strong> More memory and time consumption.</p>
+
+        <!-- ================= STRUCTURE & UNION ================= -->
+        <h2>Structure and Union</h2>
+        <h3>Structure</h3>
+        <p>A user-defined data type to group different variables.</p>
+        <pre>
+struct Student {
+    int id;
+    char name[20];
+};
+        </pre>
+        <p><strong>Structure Size:</strong> Depends on data types and compiler alignment.</p>
+
+        <h3>Accessing Members (Example)</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+struct Student {
+    int id;
+    char name[20];
+};
+int main() {
+    struct Student s1 = {1, "Anita"};
+    printf("%d %s", s1.id, s1.name);
+    return 0;
+}
+        </pre>
+
+        <h3>Nested Structure (Example)</h3>
+        <pre>
+struct Address {
+    char city[20];
+    int zip;
+};
+struct Student {
+    int id;
+    struct Address addr;
+};
+        </pre>
+
+        <h3>Array of Structures</h3>
+        <pre>
+struct Student s[2] = { {1,"Ram"}, {2,"Sita"} };
+        </pre>
+
+        <h3>Passing Structure to Function</h3>
+        <pre>
+void display(struct Student st) {
+    printf("%d %s", st.id, st.name);
+}
+        </pre>
+
+        <h3>Union</h3>
+        <p>Like structure, but shares memory among members.</p>
+        <pre>
+union Data {
+    int i;
+    float f;
+    char ch;
+};
+        </pre>
+
+        <h3>Comparison Between Structure and Union</h3>
+        <ul>
+          <li><strong>Structure:</strong> All members have separate memory.</li>
+          <li><strong>Union:</strong> All members share same memory.</li>
+        </ul>
+
+        <!-- ================= POINTERS ================= -->
+        <h2>Pointers</h2>
+        <h3>Introduction</h3>
+        <p>Pointers store the address of variables.</p>
+        <pre>
+int *ptr, x=10;
+ptr = &x;
+        </pre>
+
+        <h3>Pointer and Function</h3>
+        <p>Allows call by reference.</p>
+        <pre>
+void change(int *p) {
+    *p = 20;
+}
+        </pre>
+
+        <h3>Call by Reference Example</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+void swap(int *a, int *b) {
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int main() {
+    int x=5,y=10;
+    swap(&x,&y);
+    printf("%d %d",x,y);
+    return 0;
+}
+        </pre>
+
+        <h3>Pointers with Arrays</h3>
+        <pre>
+int arr[3] = {10,20,30};
+int *p = arr;
+printf("%d", *(p+1)); // prints 20
+        </pre>
+
+        <p><strong>Advantages:</strong> Dynamic memory, faster access.</p>
+        <p><strong>Disadvantages:</strong> Complexity, prone to errors.</p>
+
+        <!-- ================= FILE HANDLING ================= -->
+        <h2>File Handling</h2>
+        <h3>Concept and Need</h3>
+        <p>Files store data permanently, unlike variables stored in RAM.</p>
+
+        <h3>Types of Files</h3>
+        <ul>
+          <li>Sequential Files</li>
+          <li>Random Files</li>
+        </ul>
+
+        <h3>File Handling Functions</h3>
+        <ul>
+          <li><code>fopen(), fclose()</code></li>
+          <li><code>getc(), putc()</code></li>
+          <li><code>fprintf(), fscanf()</code></li>
+          <li><code>getw(), putw()</code></li>
+          <li><code>fgets(), fputs()</code></li>
+          <li><code>fread(), fwrite()</code></li>
+          <li><code>remove(), rename()</code></li>
+        </ul>
+
+        <h3>Random Access Functions</h3>
+        <ul>
+          <li><code>fseek()</code></li>
+          <li><code>rewind()</code></li>
+          <li><code>ftell()</code></li>
+        </ul>
+
+        <h3>File Opening Modes</h3>
+        <ul>
+          <li><code>r</code>, <code>r+</code></li>
+          <li><code>w</code>, <code>w+</code></li>
+          <li><code>a</code>, <code>a+</code></li>
+        </ul>
+
+        <h3>Steps to Work with Files</h3>
+        <ol>
+          <li>Define File Pointer</li>
+          <li>Open File with Mode</li>
+          <li>Read/Write/Append Operations</li>
+          <li>Close the File</li>
+        </ol>
+
+        <h3>End of File (EOF)</h3>
+        <p>Special marker indicating no more data.</p>
+
+        <!-- ================= TYPEDEF ================= -->
+        <h2>Typedef Keyword</h2>
+        <p>Used to give a new name to existing data types.</p>
+        <pre>
+typedef unsigned int UINT;
+UINT age = 25;
+        </pre>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 C Programming Tutorial</p>
+    </footer>
+  </body>
+</html>
